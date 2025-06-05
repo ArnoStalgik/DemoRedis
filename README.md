@@ -1,6 +1,6 @@
-# DemoRedis — Démo .NET Web API + Redis (Cache distribué professionnel)
+# DemoRedis — Démo .NET Web API + Redis (Cache distribué)
 
-Une API de démonstration ultra-propre pour illustrer :
+Une API de démonstration pour illustrer :
 - La mise en place d’un cache distribué Redis avec .NET
 - Les patterns d’optimisation (cache aside, TTL, gestion des erreurs Redis)
 - L’impact réel sur la performance (endpoint benchmark inclus)
