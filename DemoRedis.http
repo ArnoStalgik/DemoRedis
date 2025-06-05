@@ -1,0 +1,6 @@
+@DemoRedis_HostAddress = http://localhost:5147
+
+GET {{DemoRedis_HostAddress}}/cachedemo/
+Accept: application/json
+
+###
