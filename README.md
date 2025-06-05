@@ -11,5 +11,3 @@ Une API de démonstration pour illustrer :
 
 - [.NET 8 SDK](https://dotnet.microsoft.com/download)
 - [Docker Desktop](https://www.docker.com/products/docker-desktop)
-
-## Lancer Redis en local
