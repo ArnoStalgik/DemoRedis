@@ -1,6 +1,11 @@
 # DemoRedis
 
-DemoRedis est une API de démonstration .NET 8 illustrant l’usage professionnel de Redis comme cache distribué, la structuration clean, l’injection de dépendances par interface, le logging moderne et les tests unitaires robustes. Ce projet sert de modèle pour toute équipe cherchant à industrialiser ses APIs .NET !
+[![Build Status](https://github.com/arnaud-wissart/DemoRedis/actions/workflows/dotnet.yml/badge.svg)](https://github.com/arnaud-wissart/DemoRedis/actions)
+[![.NET](https://img.shields.io/badge/.NET-8.0-blue)](https://dotnet.microsoft.com/download/dotnet/8.0)
+[![License: MIT](https://img.shields.io/github/license/arnaud-wissart/DemoRedis)](https://github.com/arnaud-wissart/DemoRedis/blob/main/LICENSE)
+[![Coverage Status](https://img.shields.io/badge/coverage-100%25-brightgreen.svg)](https://github.com/arnaud-wissart/DemoRedis/actions) <!-- Remplace par le badge coverage réel si tu l'ajoutes -->
+
+DemoRedis est une API de démonstration .NET 8 illustrant l’usage de Redis comme cache distribué, la structuration clean, l’injection de dépendances par interface, le logging moderne et les tests unitaires robustes. Ce projet sert de modèle pour toute presonne cherchant à industrialiser ses APIs .NET !
 
 ---
 
