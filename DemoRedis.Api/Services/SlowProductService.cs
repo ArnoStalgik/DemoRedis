@@ -2,7 +2,7 @@
 
 namespace DemoRedis.Services
 {
-    public class SlowProductService
+    public class SlowProductService : ISlowProductService
     {
         public async Task<Produit> GetProductAsync(string id)
         {
@@ -14,5 +14,10 @@ namespace DemoRedis.Services
                 Maj = DateTime.Now
             };
         }
+    }
+
+    public interface ISlowProductService
+    {
+        Task<Produit> GetProductAsync(string id);
     }
 }

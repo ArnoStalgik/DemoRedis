@@ -8,7 +8,7 @@ namespace DemoRedis.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class ProductController(IDistributedCache cache, SlowProductService slowService, ILogger<ProductController> logger) : ControllerBase
+    public class ProductController(IDistributedCache cache, ISlowProductService slowService, ILogger<ProductController> logger) : ControllerBase
     {
         [HttpGet("json/{id}")]
         public async Task<IActionResult> GetJson(string id)

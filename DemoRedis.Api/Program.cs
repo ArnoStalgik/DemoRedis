@@ -1,5 +1,6 @@
 
 using DemoRedis.Services;
+using Serilog;
 
 namespace DemoRedis
 {
@@ -9,18 +10,28 @@ namespace DemoRedis
         {
             var builder = WebApplication.CreateBuilder(args);
 
+            Log.Logger = new LoggerConfiguration()
+                .ReadFrom.Configuration(builder.Configuration)
+                .Enrich.FromLogContext()
+                .WriteTo.Console()
+                .CreateLogger();
+
+            builder.Host.UseSerilog();
+
             // Add services to the container.
+            var redisConfig = builder.Configuration.GetSection("Redis");
             builder.Services.AddStackExchangeRedisCache(options =>
             {
-                options.Configuration = builder.Configuration["Redis:Configuration"];
-                options.InstanceName = builder.Configuration["Redis:DemoRedisApi"];
+                options.Configuration = redisConfig["Configuration"];
+                options.InstanceName = redisConfig["InstanceName"];
             });
+            builder.Services.AddHealthChecks().AddRedis(redisConfig["Configuration"], name: "redis");
 
             builder.Services.AddControllers();
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
-            builder.Services.AddSingleton<SlowProductService>();
+            builder.Services.AddSingleton<ISlowProductService, SlowProductService>();
 
             var app = builder.Build();
 
@@ -31,12 +42,11 @@ namespace DemoRedis
                 app.UseSwaggerUI();
             }
 
+            app.UseMiddleware<ErrorHandlingMiddleware>();
             app.UseHttpsRedirection();
-
             app.UseAuthorization();
-
-
             app.MapControllers();
+            app.MapHealthChecks("/health");
 
             app.Run();
         }
