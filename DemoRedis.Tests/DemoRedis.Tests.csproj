@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DemoRedis\DemoRedis.csproj" />
+    <ProjectReference Include="..\DemoRedis.Api\DemoRedis.Api.csproj" />
   </ItemGroup>
 
   <ItemGroup>
