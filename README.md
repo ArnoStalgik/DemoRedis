@@ -1,13 +1,26 @@
-# DemoRedis — Démo .NET Web API + Redis (Cache distribué)
+# DemoRedis
 
-Une API de démonstration pour illustrer :
-- La mise en place d’un cache distribué Redis avec .NET
-- Les patterns d’optimisation (cache aside, TTL, gestion des erreurs Redis)
-- L’impact réel sur la performance (endpoint benchmark inclus)
-- La sérialisation d’objets (JSON)
-- Des logs pour monitorer le comportement du cache
+**DemoRedis** est une application .NET 6+ de démonstration utilisant Redis comme cache distribué via l’interface standard `IDistributedCache`. Elle illustre l’utilisation d’un cache pour accélérer l’accès à des données simulées lentes.
 
-## Prérequis
+## 🚀 Fonctionnalités
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/download)
-- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+- Utilisation du cache Redis avec expiration (TTL).
+- Exemple de pattern "cache aside" pour le contrôle des accès.
+- API RESTful avec Swagger UI.
+- Architecture claire : controllers, services, modèles.
+- Facilement extensible.
+
+## 🧑‍💻 Stack technique
+
+- .NET 6+
+- ASP.NET Core WebAPI
+- StackExchange.Redis (via `IDistributedCache`)
+- Swagger / OpenAPI
+
+## 🔧 Prérequis
+
+- [.NET 6+ SDK](https://dotnet.microsoft.com/download)
+- [Docker](https://www.docker.com/) pour lancer Redis facilement :
+
+```bash
+docker run -d -p 6379:6379 redis
